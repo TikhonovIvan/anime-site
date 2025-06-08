@@ -9,6 +9,7 @@
 
 'use strict';
 
+
 (function ($) {
 
     /*------------------
@@ -29,6 +30,8 @@
             var containerEl = document.querySelector('.filter__gallery');
             var mixer = mixitup(containerEl);
         }
+
+        
     });
 
     /*------------------
@@ -49,6 +52,8 @@
             $('#search-input').val('');
         });
     });
+
+
 
     /*------------------
 		Navigation
@@ -90,6 +95,8 @@
     --------------------*/
     $('select').niceSelect();
 
+    
+
     /*------------------
         Scroll To Top
     --------------------*/
@@ -99,3 +106,27 @@
      });
 
 })(jQuery);
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const dropdownToggle = document.getElementById('userDropdownToggle');
+    const dropdownMenu = document.getElementById('userDropdownMenu');
+
+    // Закрыть dropdown при клике вне его
+    document.addEventListener('click', function (e) {
+      if (
+        !dropdownToggle.contains(e.target) &&
+        !dropdownMenu.contains(e.target)
+      ) {
+        dropdownMenu.classList.remove('show');
+      }
+    });
+
+    // Открыть/закрыть dropdown при клике на иконку
+    dropdownToggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation(); // чтобы не дошло до фильтра
+      dropdownMenu.classList.toggle('show');
+    });
+  });
+

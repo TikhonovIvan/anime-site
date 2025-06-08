@@ -59,12 +59,16 @@
                       >Категории <span class="arrow_carrot-down"></span
                     ></a>
                     <ul class="dropdown">
-                      <li><a href="./categories.html">Категории</a></li>
-                      <li><a href="./anime-details.html">Кино</a></li>
-                      <li>
+                      <li class="ml-4">
+                        <a href="./categories.html">Категории</a>
+                      </li>
+                      <li class="ml-4">
+                        <a href="./anime-details.html">Кино</a>
+                      </li>
+                      <li class="ml-4">
                         <a href="./anime-watching.html">Драмма</a>
                       </li>
-                      <li>
+                      <li class="ml-4">
                         <a href="./anime-watching.html">Аниме</a>
                       </li>
                     </ul>
@@ -76,12 +80,36 @@
               </nav>
             </div>
           </div>
+
           <div class="col-lg-2">
-            <div class="header__right">
-              <a href="#" class="search-switch"
-                ><span class="icon_search"></span
-              ></a>
-              <a href="./login.html"><span class="icon_profile"></span></a>
+            <div
+              class="header__right d-flex align-items-center justify-content-end"
+            >
+              <a href="#" class="search-switch">
+                <span class="icon_search"></span>
+              </a>
+
+              <div class="dropdown ml-3 user-dropdown">
+                <a
+                  href="#"
+                  class="dropdown-toggle"
+                  id="userDropdownToggle"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <span class="icon_profile"></span>
+                </a>
+                <div
+                  class="dropdown-menu dropdown-menu-right"
+                  id="userDropdownMenu"
+                  style="background: #0b0c2a"
+                >
+                  <a class="dropdown-item" href="account.html">Аккаунт</a>
+                  <a class="dropdown-item" href="/logout">Выйти</a>
+                  <a class="dropdown-item" href="login.html">Вход</a>
+                  <a class="dropdown-item" href="register.html">Регистрация</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
