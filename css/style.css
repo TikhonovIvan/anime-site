@@ -2395,3 +2395,24 @@ ol {
 .blog-submenu li a:hover {
   background: #e53637;
 }
+
+.cast-quiz {
+  width: 100%;
+  background-color: #e53637;
+
+  padding: 10px;
+  border-radius: 20px;
+  text-align: start;
+}
+
+.cast-quiz:hover {
+  background: none;
+  border: 1px solid #e53637;
+}
+
+.cast-quiz input {
+  margin-left: 1px;
+}
+.cast-quiz span {
+  margin-left: 20px;
+}
