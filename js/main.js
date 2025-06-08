@@ -130,3 +130,31 @@
     });
   });
 
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.blog-dropdown-toggle').forEach(function (item) {
+    item.addEventListener('click', function (e) {
+      e.stopPropagation();
+      const submenu = this.querySelector('.blog-submenu');
+      const isOpen = submenu.style.display === 'block';
+
+      // Закрыть все
+      document.querySelectorAll('.blog-submenu').forEach(function (sm) {
+        sm.style.display = 'none';
+      });
+
+      // Открыть текущее
+      submenu.style.display = isOpen ? 'none' : 'block';
+    });
+  });
+
+  // Клик вне — закрыть
+  document.addEventListener('click', function () {
+    document.querySelectorAll('.blog-submenu').forEach(function (sm) {
+      sm.style.display = 'none';
+    });
+  });
+});
+
+
