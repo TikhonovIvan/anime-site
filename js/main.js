@@ -108,27 +108,39 @@
 })(jQuery);
 
 
+/*Шапка сайта выпадающий список */
   document.addEventListener('DOMContentLoaded', function () {
-    const dropdownToggle = document.getElementById('userDropdownToggle');
-    const dropdownMenu = document.getElementById('userDropdownMenu');
+    // Основное меню (если нужно по клику)
+    const mainLink = document.querySelector('.menu-item > a');
+    const mainDropdown = document.querySelector('.menu-item > .dropdown');
 
-    // Закрыть dropdown при клике вне его
+    mainLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      mainDropdown.classList.toggle('show');
+    });
+
+    // Подменю "Драмма"
+    const subToggle = document.querySelector('.submenu-toggle');
+    const subMenu = document.querySelector('.dropdown-sub');
+
+    subToggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation(); // не закрывает всё меню
+      subMenu.classList.toggle('show');
+    });
+
+    // Закрытие всех меню при клике вне
     document.addEventListener('click', function (e) {
-      if (
-        !dropdownToggle.contains(e.target) &&
-        !dropdownMenu.contains(e.target)
-      ) {
-        dropdownMenu.classList.remove('show');
+      if (!mainDropdown.contains(e.target) && !mainLink.contains(e.target)) {
+        mainDropdown.classList.remove('show');
+      }
+      if (!subMenu.contains(e.target) && !subToggle.contains(e.target)) {
+        subMenu.classList.remove('show');
       }
     });
-
-    // Открыть/закрыть dropdown при клике на иконку
-    dropdownToggle.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation(); // чтобы не дошло до фильтра
-      dropdownMenu.classList.toggle('show');
-    });
   });
+
+
 
 
 

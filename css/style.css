@@ -2418,3 +2418,35 @@ ol {
 .cast-quiz span {
   margin-left: 20px;
 }
+
+ul.dropdown,
+ul.dropdown-sub {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  background: white;
+  border: 1px solid #ccc;
+  display: none;
+  position: absolute;
+  z-index: 1000;
+}
+
+ul.dropdown {
+  top: 100%;
+  left: 0;
+}
+
+ul.dropdown-sub {
+  top: 0;
+  left: 100%;
+  white-space: nowrap;
+}
+
+ul.dropdown.show,
+ul.dropdown-sub.show {
+  display: block !important;
+}
+
+.submenu-parent {
+  position: relative;
+}
