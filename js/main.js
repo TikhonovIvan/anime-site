@@ -108,7 +108,7 @@
 })(jQuery);
 
 
-
+/*Выпадающий список акаунт */
 document.addEventListener('DOMContentLoaded', function () {
     const dropdownToggle = document.getElementById('userDropdownToggle');
     const dropdownMenu = document.getElementById('userDropdownMenu');
@@ -168,6 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+  /*Список категори в разделе категории выпадающий*/
 
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.blog-dropdown-toggle').forEach(function (item) {
