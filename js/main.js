@@ -108,6 +108,31 @@
 })(jQuery);
 
 
+
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdownToggle = document.getElementById('userDropdownToggle');
+    const dropdownMenu = document.getElementById('userDropdownMenu');
+
+    // Закрыть dropdown при клике вне его
+    document.addEventListener('click', function (e) {
+      if (
+        !dropdownToggle.contains(e.target) &&
+        !dropdownMenu.contains(e.target)
+      ) {
+        dropdownMenu.classList.remove('show');
+      }
+    });
+
+    // Открыть/закрыть dropdown при клике на иконку
+    dropdownToggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation(); // чтобы не дошло до фильтра
+      dropdownMenu.classList.toggle('show');
+    });
+  });
+
+
+
 /*Шапка сайта выпадающий список */
   document.addEventListener('DOMContentLoaded', function () {
     // Основное меню (если нужно по клику)
